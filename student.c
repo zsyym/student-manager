@@ -64,3 +64,18 @@ void deleteStudent(Student **head, int id)
     }
     printf("未找到该学生\n");
 }
+Student *findStudent(Student *head, int id)
+{
+    Student *p = head;
+    while (p != NULL)
+    {
+        if (p->id == id)
+        {
+            printf("找到该学生");
+            return p;
+        }
+        p = p->next;
+    }
+    printf("未找到这学生");
+    return NULL;
+}

@@ -14,5 +14,5 @@ Student *createStudent(int id, const char *name, int age, float score);
 void insertStudent(Student **head, Student *newNode);
 void printStudents(Student *head);
 void deleteStudent(Student **head, int id);
-
+Student *findStudent(Student *head, int id);
 #endif

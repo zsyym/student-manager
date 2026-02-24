@@ -11,9 +11,18 @@ int main()
 
     printStudents(head);
 
-    deleteStudent(&head, 2);
+    Student *result = findStudent(head, 2);
 
-    printStudents(head);
+    if (result != NULL)
+    {
+        printf("\n查询成功:\n");
+        printf("ID:%d Name:%s Age:%d Score:%.2f\n",
+               result->id, result->name, result->age, result->score);
+    }
+    else
+    {
+        printf("未找到该学生\n");
+    }
 
     return 0;
 }
