@@ -79,3 +79,22 @@ Student *findStudent(Student *head, int id)
     printf("未找到这学生");
     return NULL;
 }
+void updateStudent(Student *head, int id)
+{
+    Student *s = findStudent(head, id);
+    if (s == NULL)
+    {
+        return;
+    }
+    printf("输入新信息:\n");
+    printf("姓名: ");
+    scanf("%s", s->name);
+
+    printf("年龄: ");
+    scanf("%d", &s->age);
+
+    printf("成绩: ");
+    scanf("%f", &s->score);
+
+    printf("修改成功\n");
+}
