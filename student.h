@@ -19,4 +19,6 @@ void updateStudent(Student *head, int id);
 int getStudentCount(Student *head);
 float getAverageScore(Student *head);
 float getHighestScore(Student *head);
+void sortScoreAsc(Student *head);
+void sortScoreDesc(Student *head);
 #endif

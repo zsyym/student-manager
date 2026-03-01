@@ -139,3 +139,69 @@ float getHighestScore(Student *head)
     }
     return highest;
 }
+static void swapStudent(Student *a, Student *b)
+{
+
+    int id = a->id;
+    char name[50];
+    int age = a->age;
+    float score = a->score;
+
+    strcpy(name, a->name);
+
+    a->id = b->id;
+    strcpy(a->name, b->name);
+    a->age = b->age;
+    a->score = b->score;
+
+    b->id = id;
+    strcpy(b->name, name);
+    b->age = age;
+    b->score = score;
+}
+void sortScoreAsc(Student *head)
+{
+
+    if (!head || !head->next)
+        return;
+
+    Student *i;
+    Student *j;
+
+    for (i = head; i->next != NULL; i = i->next)
+    {
+        for (j = head; j->next != NULL; j = j->next)
+        {
+
+            if (j->score > j->next->score)
+            {
+                swapStudent(j, j->next);
+            }
+        }
+    }
+
+    printf("成绩升序排序完成\n");
+}
+void sortScoreDesc(Student *head)
+{
+
+    if (!head || !head->next)
+        return;
+
+    Student *i;
+    Student *j;
+
+    for (i = head; i->next != NULL; i = i->next)
+    {
+        for (j = head; j->next != NULL; j = j->next)
+        {
+
+            if (j->score < j->next->score)
+            {
+                swapStudent(j, j->next);
+            }
+        }
+    }
+
+    printf("成绩降序排序完成\n");
+}
