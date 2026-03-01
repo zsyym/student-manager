@@ -98,3 +98,44 @@ void updateStudent(Student *head, int id)
 
     printf("修改成功\n");
 }
+int getStudentCount(Student *head)
+{
+    int count = 0;
+    Student *p = head;
+    while (p != NULL)
+    {
+        count++;
+        p = p->next;
+    }
+    return count;
+}
+float getAverageScore(Student *head)
+{
+    int count = 0;
+    float sum = 0.0;
+    Student *p = head;
+    while (p != NULL)
+    {
+        sum += p->score;
+        count++;
+        p = p->next;
+    }
+    return (count == 0) ? 0 : sum / count;
+}
+float getHighestScore(Student *head)
+{
+    if (head == NULL)
+        return 0.0;
+
+    float highest = head->score;
+    Student *p = head->next;
+    while (p != NULL)
+    {
+        if (p->score > highest)
+        {
+            highest = p->score;
+        }
+        p = p->next;
+    }
+    return highest;
+}

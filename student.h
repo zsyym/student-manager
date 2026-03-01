@@ -16,4 +16,7 @@ void printStudents(Student *head);
 void deleteStudent(Student **head, int id);
 Student *findStudent(Student *head, int id);
 void updateStudent(Student *head, int id);
+int getStudentCount(Student *head);
+float getAverageScore(Student *head);
+float getHighestScore(Student *head);
 #endif
