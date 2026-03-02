@@ -10,7 +10,6 @@ int saveStudentsToBinary(Student *head, const char *filename)
     FILE *fp = fopen(filename, "wb");
     if (fp == NULL)
     {
-        perror("文件打开失败");
         return 0;
     }
 
@@ -41,7 +40,6 @@ int loadStudentsFromBinary(Student **head, const char *filename)
     FILE *fp = fopen(filename, "rb");
     if (fp == NULL)
     {
-        perror("加载文件失败");
         return 0;
     }
     Student *temp = *head;
@@ -99,7 +97,6 @@ int loadUsersFromBinary(User **head, const char *filename)
     FILE *fp = fopen(filename, "rb");
     if (fp == NULL)
     {
-        perror("加载文件失败");
         return 0;
     }
     User *temp = *head;
@@ -161,7 +158,6 @@ int saveUsersToBinary(User *head, const char *filename)
     FILE *fp = fopen(filename, "wb");
     if (fp == NULL)
     {
-        perror("文件打开失败");
         return 0;
     }
 
@@ -189,7 +185,6 @@ int exportStudentScores(Student *head, const char *filename)
     FILE *fp = fopen(filename, "w");
     if (fp == NULL)
     {
-        perror("文件打开失败");
         return 0;
     }
 

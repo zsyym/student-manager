@@ -59,8 +59,15 @@ int main()
     loadStudentsFromBinary(&studentHead, STUDENT_DATA_FILE);
 
     // 初始化默认数据
-    initDefaultData(&userHead, &studentHead);
-
+    if (userHead == NULL || studentHead == NULL)
+    {
+        initDefaultData(&userHead, &studentHead);
+    }
+    if (userHead == NULL || studentHead == NULL)
+    {
+        printf("错误：无法初始化系统数据！\n");
+        return 1;
+    }
     while (1)
     {
         clearScreen();
